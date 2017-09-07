@@ -35,6 +35,5 @@ public class ScreenTools {
         DisplayMetrics metrics = new DisplayMetrics();
         defaultDisplay.getMetrics(metrics);
         return metrics.heightPixels;
-//        s
     }
 }
