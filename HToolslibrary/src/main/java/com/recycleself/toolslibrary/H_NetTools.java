@@ -5,12 +5,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * haodalong on 2017/9/7.
- * recycleself.xyz
+ * hdl on 2017/9/7.
+ * https://github.com/hao3tian5/HTools.git
+ * xintian13@126.com
  * 网络工具类
  */
 
-public class NetTools {
+public class H_NetTools {
 
     /**
      * 判断网络是否可用

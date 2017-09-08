@@ -10,13 +10,14 @@ import android.text.TextUtils;
 import java.io.File;
 
 /**
- * haodalong on 2017/9/7.
- * recycleself.xyz
+ * hdl on 2017/9/7.
+ * https://github.com/hao3tian5/HTools.git
+ * xintian13@126.com
  *
  * 获取app一些信息
  */
 
-public class AppTools {
+public class H_AppTools {
 
 
 

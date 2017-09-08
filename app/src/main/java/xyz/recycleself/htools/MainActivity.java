@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.recycleself.toolslibrary.ScreenTools;
+import com.recycleself.toolslibrary.H_ScreenTools;
 
 import xyz.recycleself.htools.view.FavorLayout;
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        int screensHeight = ScreenTools.getScreensHeight(this);
+        int screensHeight = H_ScreenTools.getScreensHeight(this);
         Log.i(TAG, "onCreate: "+screensHeight);
         String url = "http://www.recycleself.xyz:8080";
         webView = (WebView) findViewById(R.id.wv);
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        H_ScreenTools.getScreensHeight(this);
 //        viewById = (TextView) findViewById(R.id.tv);
 //        viewById1 = (TextView) findViewById(R.id.tv1);
 //        viewById2 = (TextView) findViewById(R.id.tv2);

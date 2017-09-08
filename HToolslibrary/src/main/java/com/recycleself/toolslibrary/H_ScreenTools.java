@@ -5,11 +5,12 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 
 /**
- * haodalong on 2017/7/18.
- * recycleself.xyz
+ * hdl on 2017/7/18.
+ * https://github.com/hao3tian5/HTools.git
+ * xintian13@126.com
  */
 
-public class ScreenTools {
+public class H_ScreenTools {
 
     /**
      * 获取屏幕的宽度

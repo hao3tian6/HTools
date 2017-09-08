@@ -6,11 +6,12 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 /**
- * haodalong on 2017/9/7.
- * recycleself.xyz
+ * hdl on 2017/9/7.
+ * https://github.com/hao3tian5/HTools.git
+ * xintian13@126.com
  */
 
-public class PhoneTools {
+public class H_PhoneTools {
     /**
      * 获取imei
      * @param context
@@ -22,7 +23,7 @@ public class PhoneTools {
             TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             imei = telephonyManager.getDeviceId();
         } catch (Exception e) {
-            Log.e(PhoneTools.class.getSimpleName(), e.getMessage());
+            Log.e(H_PhoneTools.class.getSimpleName(), e.getMessage());
         }
         return imei;
     }
