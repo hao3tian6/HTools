@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.recycleself.toolslibrary.H_ScreenTools;
-import com.recycleself.toolslibrary.H_SystemBarStateTools;
 
 import xyz.recycleself.htools.view.FavorLayout;
 
@@ -140,6 +139,6 @@ public class MainActivity extends AppCompatActivity {
 //        iv_1 = (ImageView) findViewById(R.id.iv_1);
 
 
-        H_SystemBarStateTools.setBarTrans(this,R.color.colorPrimaryDark);
+
     }
 }
