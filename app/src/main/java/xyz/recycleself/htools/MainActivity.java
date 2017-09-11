@@ -2,7 +2,6 @@ package xyz.recycleself.htools;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -11,8 +10,12 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.recycleself.toolslibrary.H_ScreenTools;
+import com.recycleself.toolslibrary.H_SystemBarStateTools;
+
+import java.util.Stack;
 
 import xyz.recycleself.htools.view.FavorLayout;
 
@@ -29,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
     private FavorLayout favorLayout;
     private WebView webView;
     private Button testBt;
+    private TextView sssss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        H_SystemBarStateTools.setBarBgColor(MainActivity.this,R.color.colorAccent);
         setContentView(R.layout.activity_main);
         favorLayout = (FavorLayout) findViewById(R.id.fl);
         favorLayout.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         testBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,WebViewTestActivity.class));
+//                startActivity(new Intent(MainActivity.this,WebViewTestActivity.class));
+                H_SystemBarStateTools.setBarBgColor(MainActivity.this,R.color.colorAccent);
             }
         });
 
@@ -138,7 +145,29 @@ public class MainActivity extends AppCompatActivity {
 //        drawable.start();
 //        iv_1 = (ImageView) findViewById(R.id.iv_1);
 
+        sssss = (TextView) findViewById(R.id.tv3);
 
+        Stack stack = new Stack();
+        stack.add(1);
+        stack.add(2);
+        stack.add(3);
+        stack.add(4);
+        stack.add(5);
+        stack.add(6);
+
+        while (stack.size()>0){
+            if(((Integer)stack.peek())==4){
+//                st
+
+                break;
+            }else {
+                stack.pop();
+            }
+
+        }
+
+        Toast.makeText(this, ""+stack.toString(), Toast.LENGTH_SHORT).show();
+        sssss.setText(stack.toString());
 
     }
 }

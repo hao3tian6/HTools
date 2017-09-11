@@ -91,7 +91,7 @@ public class H_SystemBarStateTools {
 
     /**
      * 状态栏暗色模式，清除MIUI、flyme或6.0以上版本状态栏黑色文字、图标
-     * 
+     *
      */
     public static void SetStatusBarDarkMode(Activity activity,int type){
         if(type==1){
