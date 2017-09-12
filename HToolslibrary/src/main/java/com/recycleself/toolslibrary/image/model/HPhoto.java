@@ -8,12 +8,8 @@ package com.recycleself.toolslibrary.image.model;
  * 存储图片信息
  */
 
-public class HPhoto {
+public class HPhoto extends Photo {
 
-    /**
-     * 图片地址
-     */
-    private String path;
 
     /**
      * 是否是剪切
