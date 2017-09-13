@@ -1,6 +1,7 @@
 package xyz.recycleself.htools;
 
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,21 +12,32 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.SimpleCursorAdapter;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import com.recycleself.toolslibrary.activity.H_BaseActivity;
+import com.recycleself.toolslibrary.activity.H_SelectPhotoActivity;
+
+public class MainActivity extends H_BaseActivity {
 
     private static final String TAG = "hao";
     private FragmentManager fm;
+    private Button select_imge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         fm = getSupportFragmentManager();
+        select_imge = (Button) findViewById(R.id.select_image);
+        select_imge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.this.startActivity(new Intent(mContext, H_SelectPhotoActivity.class));
+            }
+        });
+        fm = getSupportFragmentManager();
         CursorLoaderListFragment list = new CursorLoaderListFragment();
         fm.beginTransaction().replace(R.id.root, list).commit();
     }

@@ -1,5 +1,6 @@
 package com.recycleself.toolslibrary.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -16,10 +17,13 @@ import com.recycleself.toolslibrary.H_ActivityTools;
 
 public class H_BaseActivity extends FragmentActivity {
 
+    public Context mContext;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         H_ActivityTools.addAcitivity(this);
+        mContext = this;
 
     }
 
