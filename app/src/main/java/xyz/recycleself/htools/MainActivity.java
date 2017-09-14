@@ -37,9 +37,9 @@ public class MainActivity extends H_BaseActivity {
                 MainActivity.this.startActivity(new Intent(mContext, H_SelectPhotoActivity.class));
             }
         });
-        fm = getSupportFragmentManager();
-        CursorLoaderListFragment list = new CursorLoaderListFragment();
-        fm.beginTransaction().replace(R.id.root, list).commit();
+//        fm = getSupportFragmentManager();
+//        CursorLoaderListFragment list = new CursorLoaderListFragment();
+//        fm.beginTransaction().replace(R.id.root, list).commit();
     }
 
     public static class CursorLoaderListFragment extends ListFragment

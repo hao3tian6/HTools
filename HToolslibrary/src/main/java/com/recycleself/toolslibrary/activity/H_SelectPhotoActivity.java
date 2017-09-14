@@ -6,12 +6,13 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.Process;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
-import android.widget.Toast;
+import android.util.Log;
 
 import com.recycleself.toolslibrary.R;
 import com.recycleself.toolslibrary.helper.Constants;
@@ -29,8 +30,8 @@ public class H_SelectPhotoActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_image);
 
-        //获取手机中所有的图片
-        getAllPhoto();
+//        //获取手机中所有的图片
+//        getAllPhoto();
 
     }
 
@@ -43,7 +44,10 @@ public class H_SelectPhotoActivity extends FragmentActivity {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case Constants.AGREED_PERMISSION:
-                        Toast.makeText(H_SelectPhotoActivity.this, "xxxx", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(H_SelectPhotoActivity.this, "xxxx", Toast.LENGTH_SHORT).show();
+
+                        getAllImage();
+
                         break;
                     case Constants.REJECT_PERMISSION:
                         
@@ -56,10 +60,13 @@ public class H_SelectPhotoActivity extends FragmentActivity {
         checkAppPermission();
     }
 
+
+
     private void checkAppPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             //请求权限
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Constants.PERMISSION_REQUEST_READ_EXTERNAL_STORAGE);
+            return;
         }
 
         //权限请求成功  发布消息请求数据
@@ -82,15 +89,21 @@ public class H_SelectPhotoActivity extends FragmentActivity {
 
     }
 
-    /**
-     * 获取所有图片
-     */
-    private void getAllPhoto() {
+    private void getAllImage() {
         new Thread() {
             @Override
             public void run() {
+                android.os.Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
                 //查询数据库内容
                 Cursor cursor = getApplicationContext().getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, null, null, MediaStore.Images.Media.DATE_ADDED);
+
+
+
+                while (cursor.moveToNext()){
+                    Log.i("image",cursor.getString(cursor.getColumnIndex(projection[0])));
+                    Log.i("imagex",cursor.getString(cursor.getColumnIndex(projection[1])));
+                }
+
             }
         }.start();
     }
