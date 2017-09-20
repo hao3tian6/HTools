@@ -13,6 +13,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.widget.GridView;
 
 import com.recycleself.toolslibrary.R;
 import com.recycleself.toolslibrary.helper.Constants;
@@ -24,11 +25,14 @@ public class H_SelectPhotoActivity extends FragmentActivity {
             MediaStore.Images.Media.DATA
     };
     private Handler handler;
+    private GridView image_gv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_image);
+
+        image_gv = (GridView) findViewById(R.id.image_gv);
 
 //        //获取手机中所有的图片
 //        getAllPhoto();

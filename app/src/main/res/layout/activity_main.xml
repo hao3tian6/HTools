@@ -9,6 +9,12 @@
     android:layout_margin="20dp"
     tools:context="xyz.recycleself.htools.MainActivity"
     >
+    <xyz.recycleself.htools.view.ImageX
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        />
     <FrameLayout
         android:id="@+id/root"
         android:layout_weight="1"
@@ -23,5 +29,6 @@
         android:id="@+id/select_image"
         android:layout_gravity="bottom"
         />
+
 
 </LinearLayout>

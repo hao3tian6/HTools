@@ -15,8 +15,10 @@ import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.bumptech.glide.Glide;
 import com.recycleself.toolslibrary.activity.H_BaseActivity;
 import com.recycleself.toolslibrary.activity.H_SelectPhotoActivity;
 
@@ -25,6 +27,7 @@ public class MainActivity extends H_BaseActivity {
     private static final String TAG = "hao";
     private FragmentManager fm;
     private Button select_imge;
+    private ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +40,17 @@ public class MainActivity extends H_BaseActivity {
                 MainActivity.this.startActivity(new Intent(mContext, H_SelectPhotoActivity.class));
             }
         });
+        String imageurl = "http://recycleself.xyz/sun.gif";
+//        String imageurl = "http://recycleself.xyz/hua.png";
+//        http://recycleself.xyz/longmao.gif
+        iv = (ImageView) findViewById(R.id.iv);
+        Glide.with(this).load(imageurl).fitCenter().placeholder(R.mipmap.ic_launcher).into(iv);
 //        fm = getSupportFragmentManager();
 //        CursorLoaderListFragment list = new CursorLoaderListFragment();
 //        fm.beginTransaction().replace(R.id.root, list).commit();
     }
+
+
 
     public static class CursorLoaderListFragment extends ListFragment
             implements LoaderManager.LoaderCallbacks<Cursor> {
