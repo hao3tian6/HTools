@@ -12,17 +12,20 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.recycleself.toolslibrary.activity.H_BaseActivity;
+import com.recycleself.toolslibrary.H_ActivityTools;
+import com.recycleself.toolslibrary.H_DateTools;
 import com.recycleself.toolslibrary.activity.H_SelectPhotoActivity;
 
-public class MainActivity extends H_BaseActivity {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "hao";
     private FragmentManager fm;
@@ -32,14 +35,16 @@ public class MainActivity extends H_BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        H_ActivityTools.setActivityLandscape(this);
         setContentView(R.layout.activity_main);
         select_imge = (Button) findViewById(R.id.select_image);
         select_imge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.startActivity(new Intent(mContext, H_SelectPhotoActivity.class));
+                MainActivity.this.startActivity(new Intent(MainActivity.this, H_SelectPhotoActivity.class));
             }
         });
+        Toast.makeText(this, ""+ H_DateTools.getWeekDay(), Toast.LENGTH_SHORT).show();
         String imageurl = "http://recycleself.xyz/sun.gif";
 //        String imageurl = "http://recycleself.xyz/hua.png";
 //        http://recycleself.xyz/longmao.gif
@@ -48,6 +53,8 @@ public class MainActivity extends H_BaseActivity {
 //        fm = getSupportFragmentManager();
 //        CursorLoaderListFragment list = new CursorLoaderListFragment();
 //        fm.beginTransaction().replace(R.id.root, list).commit();
+
+
     }
 
 

@@ -26,8 +26,8 @@ publish {
     userOrg = 'hao3tian6'
     groupId = 'com.recycleself'
     artifactId = 'htools'
-    publishVersion = '1.0.0'
-    desc = 'Oh hi, this is a tool'
+    publishVersion = '1.0.1'
+    desc = 'this a base tools'
     website = 'https://github.com/hao3tian6/HTools'
 }
 

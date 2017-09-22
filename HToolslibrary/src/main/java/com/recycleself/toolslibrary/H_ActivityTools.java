@@ -1,6 +1,10 @@
 package com.recycleself.toolslibrary;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 
 import java.util.Stack;
 
@@ -53,6 +57,62 @@ public class H_ActivityTools {
     public static  void closeApp(){
         finsihAllAcitivity();
         System.exit(0);
+    }
+
+
+    /**
+     * 隐藏基本Activity ActionBar
+     * @param activity
+     */
+    public static void hideActionBar(Activity activity){
+        ActionBar actionBar = activity.getActionBar();
+        if(actionBar!=null){
+            actionBar.hide();
+        }
+    }
+
+
+    /**
+     * 隐藏AppCompatActivity ActionBar
+     * @param appCompatActivity
+     */
+    public static void hideSupportActionBar(AppCompatActivity appCompatActivity){
+        android.support.v7.app.ActionBar supportActionBar = appCompatActivity.getSupportActionBar();
+        if(supportActionBar!=null){
+            supportActionBar.hide();
+        }
+    }
+
+    /**
+     * 设置Activity 全屏  隐藏状态栏
+     * @param activity
+     */
+    public static void setFullScreem(Activity activity){
+        activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+    }
+
+    /**
+     * 设置Activity 横屏
+     * android:screenOrientation="landscape"
+     * @param activity
+     */
+    public static void setActivityLandscape(Activity activity){
+        if (activity.getRequestedOrientation()!= ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
+    }
+
+    /**
+     * 设置Activity 竖屏
+     * android:screenOrientation="portrait"
+     * @param activity
+     */
+    public static void setActivityPortrait(Activity activity){
+        if (activity.getRequestedOrientation()!=ActivityInfo.SCREEN_ORIENTATION_PORTRAIT){
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
     }
 
 

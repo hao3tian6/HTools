@@ -3,7 +3,7 @@ package com.recycleself.toolslibrary.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.recycleself.toolslibrary.H_ActivityTools;
 
@@ -15,7 +15,7 @@ import com.recycleself.toolslibrary.H_ActivityTools;
  *
  */
 
-public class H_BaseActivity extends FragmentActivity {
+public class H_BaseActivity extends AppCompatActivity {
 
     public Context mContext;
 
