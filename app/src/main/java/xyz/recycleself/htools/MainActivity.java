@@ -7,8 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.recycleself.toolslibrary.H_ActivityTools;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
@@ -17,7 +15,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        H_ActivityTools.setActivityLandscape(this);
         setContentView(R.layout.activity_main);
         bt_dialog = (Button) findViewById(R.id.bt_dialog);
         bt_dialog.setOnClickListener(this);
