@@ -41,7 +41,7 @@ public class H_ActivityTools {
     /**
      * 关闭所有acitivity
      */
-    public static void finsihAllAcitivity(){
+    public static void finishAllAcitivity(){
         if(activityStack==null|| activityStack.size()==0){
             return;
         }
@@ -55,7 +55,7 @@ public class H_ActivityTools {
      * 完全退出app
      */
     public static  void closeApp(){
-        finsihAllAcitivity();
+        finishAllAcitivity();
         System.exit(0);
     }
 

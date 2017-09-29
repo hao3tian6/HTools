@@ -19,7 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestActivity" />
         <activity android:name=".WebViewTestActivity" />
         <activity android:name=".ActivityDialog"></activity>
     </application>
